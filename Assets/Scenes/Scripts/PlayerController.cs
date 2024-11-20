@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))] 
@@ -9,6 +10,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _rotationSpeed;   
     [SerializeField] private float _jumpForce;      
     [SerializeField] private KeyCode _jumpKey;
+    // [SerializeField] private LayerMask _coinMask; 
+    // [SerializeField] private Score playerScore; 
     private bool _isGrounded; 
 
     private Rigidbody _rb;
@@ -66,4 +69,15 @@ public class PlayerController : MonoBehaviour
             _isGrounded = false;
         }
     }
+    // private void OnTriggerEnter(Collider other)
+    // {
+    //     if (LayerMaskUtil.ContainsLayer(_coinMask, other.gameObject.layer))
+    //     {
+    //         if (other.gameObject.TryGetComponent(out Coin coin))
+    //         {
+    //             playerScore.AddScore(coin.price);
+    //             gameObject.SetActive(false);
+    //         }
+    //     }
+    // }
 }
